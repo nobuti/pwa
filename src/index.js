@@ -1,4 +1,12 @@
-import './style'
-import App from './components/app'
+import initStore from './bundles'
+import { Provider } from 'redux-bundler-preact'
 
-export default App
+import App from './components/app'
+import './style'
+
+const store = initStore()
+export default () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+)
