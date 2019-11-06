@@ -39,6 +39,7 @@
     "preact": "^10.0.1",
     "preact-render-to-string": "^5.1.0",
     "preact-router": "^3.0.0",
+    "react-anime": "^2.2.0",
     "redux-bundler": "^26.0.0",
     "redux-bundler-preact": "^2.0.0"
   },
