@@ -2,7 +2,7 @@ import initStore from './bundles'
 import { Provider } from 'redux-bundler-preact'
 
 import App from './components/app'
-import './style'
+import './style/index.scss'
 
 const store = initStore()
 export default () => (

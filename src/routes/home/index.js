@@ -1,11 +1,23 @@
-import { h } from 'preact';
-import style from './style';
+import { h, Component } from 'preact';
+import Anime from 'react-anime';
 
-const Home = () => (
-	<div class={style.home}>
-		<h1>Home</h1>
-		<p>This is the Home component.</p>
-	</div>
-);
+import style from './style.scss'
 
-export default Home;
+class Motion extends Component {
+  state = { isVisible: true };
+
+  componentDidMount() {
+  	setInterval(() => {
+  		this.setState({ isVisible: !this.state.isVisible });
+  	}, 1000);
+  }
+
+  render() {
+  	const { isVisible } = this.state;
+  	return (<Anime opacity={isVisible ? [1, 0] : [0, 1]}>
+  		<div class={style.container} />;
+  	</Anime>);
+  }
+}
+
+export default Motion;
